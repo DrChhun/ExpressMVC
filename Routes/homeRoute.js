@@ -4,9 +4,9 @@ const homeController = require('../Controllers/homeController');
 const router = express.Router();
 
 router.route('/content')
-    .get(homeController.getContent);
+    .get(homeController.getContent)
 
 router.route('/user')
-    .get(homeController.getUser);
+    .get(homeController.getUser)
 
 module.exports = router;
