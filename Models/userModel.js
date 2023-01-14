@@ -2,16 +2,19 @@ const mongoose = require('mongoose');
 
 const findSchema = new mongoose.Schema({
 
-    name: {
-        type: String
+    name : { 
+        type : String,
+        unique : true, 
+        required : true 
     },
     age: {
-        type: String
+        type: Number,
+        unique: true
     },
     height: {
-        type: String
+        type: Number
     }
 
 });
 
-module.exports = mongoose.model('Find', findSchema)
+module.exports = mongoose.model('User', findSchema)

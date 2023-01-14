@@ -1,7 +1,7 @@
 const express = require('express');
+const bp = require('body-parser')
 const app = express();
 
-const homeRouter = require('./Routes/homeRoute');
 const userRouter = require('./Routes/userRoute');
 
 // app.use('/', (req, res) => {
@@ -10,7 +10,8 @@ const userRouter = require('./Routes/userRoute');
 //     })
 // });
 
-app.use('/home', homeRouter);
+app.use(bp.json())
+app.use(bp.urlencoded({ extended: true }))
 
 app.use('/user', userRouter);
 
