@@ -1,6 +1,7 @@
 const express = require('express');
 const bp = require('body-parser')
 const app = express();
+const cors = require('cors');
 
 const userRouter = require('./Routes/userRoute');
 
@@ -9,6 +10,7 @@ const userRouter = require('./Routes/userRoute');
 //         message: 'this is good broder'
 //     })
 // });
+app.use(cors());
 
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
